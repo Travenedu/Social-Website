@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/profile.css') }}">
+    <title>Profile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <div class="links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="url_for('feed')">Feed</a></li>
+                    <li><a href="url_for('post')">Post</a></li>
+                    <li><a href="url_for('profile')">Profile</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!--<img class="profile-picture-circle" src="{{ user.photo-circle }}">
+        
+        <center><img class="profile-picture-circle" src="missing image.jpeg" width="150"></center>-->
+        <center><img class="profile-picture-circle" src="{{ user.photo-circle }}" width="150"></center>
+
+        <div class="about-me">
+            <div class="about-me-container">
+                <div>
+                    <!--<img class="profile-picture-square" src="{{ user.photo-square }}">-->
+                    <img class="profile-picture-square" src="{{ user.photo-square }}" width="150">
+                    <!--<img src="missing image.jpeg" width="150">-->
+                </div>
+                
+                <div>
+                    <h2>About Me</h2>
+                    <p>{{ user.description}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fun-facts">
+            {% for fact in user.fun_facts%}
+                <h2>fact</h2>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

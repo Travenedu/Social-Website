@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+
+{% block title %}
+Feed
+{% endblock %}
+
+{% block content %}
+
+<h1>Feed</h1>
+<div class="feed">
+  {% for post in posts %}
+    <h3>{{ post }}</h3>
+  {% endfor %}
+</div>
+
+{% endblock %}

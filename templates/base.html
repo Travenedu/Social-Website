@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <a href= "{{ url_for('login') }}"><h1 class="title">Social</h1></a><!--change to feed-->
+        <nav>
+            <ul class="nav_links">
+                <div class="links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="{{ url_for('feed') }}">Feed</a></li>
+                    <li><a href="{{ url_for('post') }}">Post</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Fill in</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Random</a></li>
+                        <li><a href="#">Random</a></li>
+                        <li><a href="#">Random</a></li>
+                        <li><a href="#">Random</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Random</h4>
+                    <ul>
+                        <li><a href="#">Random</a></li>
+                        <li><a href="#">Random</a></li>
+                        <li><a href="#">Random</a></li>
+                        <li><a href="#">Random</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>   
+
+</body>
+</html>
